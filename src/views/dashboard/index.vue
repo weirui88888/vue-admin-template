@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">功夫不负有心人</div>
+    <div class="dashboard-text">Hello world</div>
   </div>
 </template>
 
@@ -16,10 +16,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@font-face {
-  font-family: hello;
-  src: url(https://m0-file2.bybutter.com/uploaded/rms/0FCC0AC2C38D38A6A411587632739091.otf);
-}
 .dashboard {
   &-container {
     width: 100%;
@@ -45,7 +41,7 @@ export default {
   &-text {
     color: #fff;
     font-family: hello;
-    font-size: 3rem;
+    font-size: 5rem;
   }
 }
 </style>
