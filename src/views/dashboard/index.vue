@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">向世界展示中国的力量</div>
+    <div class="dashboard-text">向世界展示中国的力量!</div>
   </div>
 </template>
 
