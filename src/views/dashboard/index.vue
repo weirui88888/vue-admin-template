@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">helldo</div>
+    <div class="dashboard-text">终于成功了</div>
   </div>
 </template>
 
