@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">能成功吗？？???？</div>
+    <div class="dashboard-text">功夫不负有心人</div>
   </div>
 </template>
 
