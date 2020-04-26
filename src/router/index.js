@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+const defaultSettings = require('@/settings.js')
+
+const base = defaultSettings.publicPath
 
 Vue.use(Router)
 
@@ -169,6 +172,7 @@ export const constantRoutes = [
 
 const createRouter = () =>
   new Router({
+    base,
     mode: 'history', // require service support
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
