@@ -83,6 +83,40 @@ export const constantRoutes = [
   },
 
   {
+    path: '/component',
+    component: Layout,
+    redirect: '/component/button',
+    name: 'Component',
+    meta: { title: 'Component', icon: 'example' },
+    children: [
+      {
+        path: 'scroll-button',
+        name: 'Scroll-button',
+        component: () => import('@/views/component/button/scroll-button/index'),
+        meta: { title: 'Scroll-button', icon: 'table' }
+      },
+      {
+        path: 'hover-button',
+        name: 'Hover-button',
+        component: () => import('@/views/component/button/hover-button/index'),
+        meta: { title: 'Hover-button', icon: 'table' }
+      },
+      {
+        path: 'input',
+        name: 'Input',
+        component: () => import('@/views/component/input/index'),
+        meta: { title: 'Input', icon: 'table' }
+      },
+      {
+        path: 'camera',
+        name: 'Camera',
+        component: () => import('@/views/component/camera/index'),
+        meta: { title: 'Camera', icon: 'table' }
+      }
+    ]
+  },
+
+  {
     path: '/form',
     component: Layout,
     children: [

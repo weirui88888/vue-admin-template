@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">Hello world</div>
+    <div class="dashboard-text">
+      Hello World
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,8 @@ export default {
   name: 'Dashboard',
   computed: {
     ...mapGetters(['name'])
-  }
+  },
+  mounted() {}
 }
 </script>
 

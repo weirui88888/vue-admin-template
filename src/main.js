@@ -11,9 +11,21 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
+// import debug from '@/utils/debug'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+
+// sentry错误收集
+import * as Sentry from '@sentry/browser'
+import { Vue as VueIntegration } from '@sentry/integrations'
+
+Sentry.init({
+  dsn:
+    'https://5a2b5004c60e4d1689cbbe3c23af768d@o380946.ingest.sentry.io/5226658',
+  integrations: [new VueIntegration({ Vue, attachProps: true })],
+  logErrors: true
+})
 
 /**
  * If you don't want to use mock-server
@@ -34,6 +46,8 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+// Vue.use(debug, { entryName: 'main.js' })
 
 new Vue({
   el: '#app',
