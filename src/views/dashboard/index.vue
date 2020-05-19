@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">
-      Hello World
+      超哥、磊少、宝哥，有钱挣都懒的弯腰？
     </div>
   </div>
 </template>
@@ -13,8 +13,7 @@ export default {
   name: 'Dashboard',
   computed: {
     ...mapGetters(['name'])
-  },
-  mounted() {}
+  }
 }
 </script>
 
