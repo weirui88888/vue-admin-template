@@ -13,7 +13,10 @@ const store = new Vuex.Store({
     settings,
     user
   },
-  getters
+  getters,
+  state: {
+    name: 'bybutter'
+  }
 })
 
 export default store

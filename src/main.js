@@ -1,7 +1,14 @@
+/*
+ * @description:
+ * @Author: weirui
+ * @Date: 2020-05-07 14:47:22
+ * @FilePath: /vue-admin-template/src/main.js
+ */
+
 import Vue from 'vue'
-
+import Postmate from 'postmate/build/postmate'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
-
+Postmate.debug = false
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
@@ -11,7 +18,10 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
+import AsyncComputed from 'vue-async-computed'
 
+Vue.use(AsyncComputed)
+Vue.prototype.Postmate = Postmate
 // import debug from '@/utils/debug'
 
 import '@/icons' // icon

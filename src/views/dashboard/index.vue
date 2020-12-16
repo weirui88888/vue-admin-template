@@ -1,18 +1,70 @@
+<!--
+ * @description:
+ * @Author: weirui
+ * @Date: 2020-05-07 14:47:22
+ * @FilePath: /vue-admin-template/src/views/dashboard/index.vue
+-->
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">
-      超哥、磊少、宝哥，有钱挣都懒的弯腰？
-    </div>
+    <div class="dashboard-text"></div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+
+const { mapGetters } = createNamespacedHelpers('user')
 
 export default {
   name: 'Dashboard',
+  data() {
+    return {
+      a: 2,
+      b: 3
+    }
+  },
   computed: {
-    ...mapGetters(['name'])
+    name() {
+      return this.$store.getters.name
+    },
+    ...mapGetters(['getName'])
+  },
+  asyncComputed: {
+    sum() {
+      const total = this.a + this.b
+      const pro = new Promise(resolve => {
+        setTimeout(() => resolve(total), 5000)
+      })
+      return pro
+    }
+  },
+  methods: {
+    setIframeStyle(className, style) {
+      this.$nextTick(() => {
+        const { height, width } = style
+        console.log(document.querySelector(className))
+        document.querySelector(className).style.height = height
+        document.querySelector(className).style.width = width
+      })
+    }
+  },
+  mounted() {
+    const handshake = new this.Postmate({
+      container: document.querySelector('.dashboard-container'), // Element to inject frame into
+      url: 'http://192.168.29.6:8080/child.html', // Page to load, must have postmate.js. This will also be the origin used for communication.
+      name: 'my-iframe-name', // Set Iframe name attribute. Useful to get `window.name` in the child.
+      classListArray: ['childIframe'] //Classes to add to the iframe via classList, useful for styling.
+    })
+
+    handshake.then(child => {
+      // Fetch the height property in child.html and set it to the iFrames height
+      child
+        .get('height')
+        .then(height => (child.frame.style.display = `${200}px`))
+      child.call('setBodyFontSize', 20)
+      // Listen to a particular event from the child
+      child.on('some-event', data => console.log(data)) // Logs "Hello, World!"
+    })
   }
 }
 </script>
@@ -44,6 +96,10 @@ export default {
     color: #fff;
     font-family: hello;
     font-size: 5rem;
+    .camping {
+      width: 8em;
+      height: 8em;
+    }
   }
 }
 </style>

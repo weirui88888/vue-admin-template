@@ -112,6 +112,12 @@ export const constantRoutes = [
         name: 'Camera',
         component: () => import('@/views/component/camera/index'),
         meta: { title: 'Camera', icon: 'table' }
+      },
+      {
+        path: 'finger',
+        name: 'Finger',
+        component: () => import('@/views/component/finger/index'),
+        meta: { title: 'Finger', icon: 'table' }
       }
     ]
   },

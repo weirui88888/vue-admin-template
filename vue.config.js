@@ -52,7 +52,7 @@ module.exports = {
   chainWebpack(config) {
     config.plugins.delete('preload') // TODO: need test
     config.plugins.delete('prefetch') // TODO: need test
-
+    config.resolve.symlinks(false)
     // set svg-sprite-loader
     config.module
       .rule('svg')
