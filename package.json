@@ -18,6 +18,8 @@
     "@sentry/browser": "^5.15.5",
     "@sentry/integrations": "^5.15.5",
     "axios": "0.18.1",
+    "browserslist": "^4.16.0",
+    "caniuse-lite": "^1.0.30001168",
     "element-ui": "2.13.0",
     "gsap": "^3.2.6",
     "js-cookie": "2.2.0",
