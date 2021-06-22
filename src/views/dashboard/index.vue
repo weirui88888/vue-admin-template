@@ -7,7 +7,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">
-      123
+      345
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
   asyncComputed: {
     sum() {
       const total = this.a + this.b
-      const pro = new Promise((resolve) => {
+      const pro = new Promise(resolve => {
         setTimeout(() => resolve(total), 5000)
       })
       return pro
@@ -58,14 +58,14 @@ export default {
       classListArray: ['childIframe'] //Classes to add to the iframe via classList, useful for styling.
     })
 
-    handshake.then((child) => {
+    handshake.then(child => {
       // Fetch the height property in child.html and set it to the iFrames height
       child
         .get('height')
-        .then((height) => (child.frame.style.display = `${200}px`))
+        .then(height => (child.frame.style.display = `${200}px`))
       child.call('setBodyFontSize', 20)
       // Listen to a particular event from the child
-      child.on('some-event', (data) => console.log(data)) // Logs "Hello, World!"
+      child.on('some-event', data => console.log(data)) // Logs "Hello, World!"
     })
   }
 }
