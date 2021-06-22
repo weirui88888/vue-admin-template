@@ -7,7 +7,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">
-      345
+      3455
     </div>
   </div>
 </template>
